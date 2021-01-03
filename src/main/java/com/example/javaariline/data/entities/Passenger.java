@@ -18,7 +18,7 @@ public class Passenger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @NotNull
     @Column(name = "firstName")
@@ -40,15 +40,15 @@ public class Passenger {
     @Column(name = "phoneNumber")
     private String phoneNumber;
 
-    @OneToMany(mappedBy = "passenger", fetch = FetchType.LAZY)
+    @OneToMany
     private List<Ticket> tickets;
 
 
     @Column(name = "balance")
-    private double balance;
+    private Double balance;
 
 
-    public Passenger(String firstName, String lastName, String email,String password, String phoneNumber, double balance) {
+    public Passenger(String firstName, String lastName, String email,String password, String phoneNumber, Double balance) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -60,11 +60,11 @@ public class Passenger {
     public Passenger() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -108,14 +108,19 @@ public class Passenger {
         this.password = password;
     }
 
-    public double getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
 
-
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
 }

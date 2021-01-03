@@ -14,29 +14,27 @@ import javax.persistence.*;
 
 public class Ticket {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @Column(name = "seatNumber")
     private String seatNumber;
 
-    @Column(name = "flightID")
     @OneToOne
-    private long flightID;
+    private Flight flight;
 
-    public Ticket(String seatNumber, long flightID) {
+    public Ticket(String seatNumber, Flight flight) {
         this.seatNumber = seatNumber;
-        this.flightID = flightID;
+        this.flight = flight;
     }
 
     public Ticket() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -48,11 +46,12 @@ public class Ticket {
         this.seatNumber = seatNumber;
     }
 
-    public long getFlightID() {
-        return flightID;
+    public Flight getFlight() {
+        return flight;
     }
 
-    public void setFlightID(long flightID) {
-        this.flightID = flightID;
+    public void setFlight(Flight flight) {
+        this.flight = flight;
     }
 }
+

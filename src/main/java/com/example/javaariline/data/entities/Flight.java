@@ -19,18 +19,14 @@ import java.util.Date;
 public class Flight {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @OneToOne
-    @NotNull
     private Airport provenance;
 
     @OneToOne
-    @NotNull
     private Airport destination;
 
-
-    @NotNull
     private Date date;
 
     @NotNull
@@ -40,12 +36,11 @@ public class Flight {
     @OneToOne
     private Airplane airplane;
 
-    @NotNull
+    @OneToOne
     private Employee pilot;
 
 
     public Flight(Airport provenance, Airport destination, Date date, LocalDateTime time, Airplane airplane, Employee pilot) {
-        this.id = id;
         this.provenance = provenance;
         this.destination = destination;
         this.date = date;
@@ -55,6 +50,14 @@ public class Flight {
     }
 
     public Flight() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Airport getProvenance() {

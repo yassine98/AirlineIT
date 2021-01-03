@@ -1,9 +1,6 @@
 package com.example.javaariline.data.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  *
@@ -16,7 +13,10 @@ import javax.persistence.Table;
 public class Airport {
 
     @Id
-    private String code;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column (name = "name")
+    private String name;
     @Column (name = "country")
     private String country;
     @Column (name = "city")
@@ -24,8 +24,8 @@ public class Airport {
     @Column (name = "numberOfTerminals")
     private int numberOfTerminals;
 
-    public Airport(String code, String country, String city, int numberOfTerminals) {
-        this.code = code;
+    public Airport(String name, String country, String city, int numberOfTerminals) {
+        this.name = name;
         this.country = country;
         this.city = city;
         this.numberOfTerminals = numberOfTerminals;
@@ -34,12 +34,20 @@ public class Airport {
     public Airport() {
     }
 
-    public String getCode() {
-        return code;
+    public String getName() {
+        return name;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCountry() {

@@ -7,6 +7,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
 public interface PassengerRepository extends CrudRepository<Passenger,Long> {
+    Passenger findByEmail(String email);
 
-    Passenger findByID(long id);
+    Passenger findByID(long passengerID);
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Service
@@ -24,6 +25,24 @@ FlightRepository flightRepository;
     public void delete(long id){
         Flight flight = flightRepository.findById(id).get();
         flightRepository.delete(flight);
+    }
+
+    public Flight saveNoteBook(Airplane airplane, Airport toAirPort, Airport fromAirPort, Employee employee, String date ){
+
+        Flight flight = new Flight();
+
+
+        flight.setAirplane(airplane);
+        flight.setDestination(toAirPort);
+        flight.setProvenance(fromAirPort);
+        flight.setPilot(employee);
+
+        //String str = flightDTO.getDateTime();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        LocalDateTime dateTime = LocalDateTime.parse(date, formatter);
+        flight.setTime(dateTime);
+
+        return flight;
     }
 
 

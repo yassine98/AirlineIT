@@ -14,14 +14,14 @@ import javax.persistence.*;
 public class Airplane {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     private String brand;
     private String model;
-    private String capacity;
+    private Integer capacity;
 
 
-    public Airplane(String brand, String model, String capacity) {
+    public Airplane(String brand, String model, Integer capacity) {
         this.brand = brand;
         this.model = model;
         this.capacity = capacity;
@@ -54,11 +54,11 @@ public class Airplane {
         this.model = model;
     }
 
-    public String getCapacity() {
+    public Integer getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 }
