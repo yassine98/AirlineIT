@@ -68,10 +68,10 @@ I will be using IntelliJ as Integrated Developing Environment
 ## Architecture
 
 ### Physical architecture
-![Physical architecture](/architecture/physical.png)
+![Physical architecture](/architecture/physical.PNG)
 
 ### Logical architecture
-![Logical architecture](/architecture/logical.png)
+![Logical architecture](/architecture/logical.PNG)
 
 
 ## Design
@@ -79,15 +79,15 @@ I will be using IntelliJ as Integrated Developing Environment
 ### Class diagrams
 
 #### Entity class diagram
-![Entity class diagram](/design/entity.png)
+![Entity class diagram](/design/entity.PNG)
 
 #### Repositories and Services Class Diagram
-![Repositories and Services Class Diagram](/design/repo.png)
+![Repositories and Services Class Diagram](/design/repo.PNG)
 
 ### Sequence diagrams
 
 #### Data-driven Sequence Diagram
-![Data-driven Sequence Diagram](/design/data.png)
+![Data-driven Sequence Diagram](/design/data.PNG)
 
 #### Service-driven Sequence Diagram
-![Service-driven Sequence Diagram](/design/service.png)
+![Service-driven Sequence Diagram](/design/service.PNG)
